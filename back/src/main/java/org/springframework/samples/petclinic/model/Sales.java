@@ -9,8 +9,7 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "sales", uniqueConstraints = @UniqueConstraint(columnNames = { "id", "title", "description", "discount",
-		"expireDate" }))
+@Table(name = "sales", uniqueConstraints = @UniqueConstraint(columnNames = {"id","title","description", "discount","expireDate"}))
 
 public class Sales extends BaseEntity {
 
