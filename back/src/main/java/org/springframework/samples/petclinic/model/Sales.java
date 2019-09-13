@@ -2,8 +2,13 @@ package org.springframework.samples.petclinic.model;
 
 import java.sql.Date;
 import javax.persistence.Column;
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+import org.hibernate.validator.constraints.NotEmpty;
+@Entity
+@Table(name = "sales", uniqueConstraints = @UniqueConstraint(columnNames = {"id","title","description", "discount","expireDate"}))
 public class Sales extends BaseEntity {
 
 	@Column(name = "id")
