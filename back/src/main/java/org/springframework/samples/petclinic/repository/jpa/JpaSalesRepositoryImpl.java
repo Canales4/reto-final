@@ -1,5 +1,7 @@
 package org.springframework.samples.petclinic.repository.jpa;
 
-public class JpaSalesRepositoryImpl {
+import org.springframework.samples.petclinic.repository.SalesRepository;
+
+public class JpaSalesRepositoryImpl implements SalesRepository {
 
 }
