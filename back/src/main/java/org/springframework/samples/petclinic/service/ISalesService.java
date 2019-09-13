@@ -3,6 +3,7 @@ package org.springframework.samples.petclinic.service;
 import java.util.List;
 
 import org.springframework.samples.petclinic.model.Sales;
+import org.springframework.samples.petclinic.repository.SalesRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,26 +1,52 @@
 package org.springframework.samples.petclinic.repository.jpa;
 
-import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
-import org.springframework.context.annotation.Profile;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.samples.petclinic.model.Owner;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Sales;
-import org.springframework.stereotype.Repository;
+import org.springframework.samples.petclinic.repository.SalesRepository;
+import org.springframework.samples.petclinic.service.ISalesService;
+import org.springframework.stereotype.Service;
 
-@Repository
-@Profile("jpa")
-public class JpaSalesRepositoryImpl {
+@Service
+public class JpaSalesRepositoryImpl implements ISalesService {
 
-	/*
-	@Query(
-	  value = "SELECT s FROM sales s WHERE s.expireDate > CURRENT_TIMESTAMP", 
-	  nativeQuery = true)
-	List<Sales> findAllExpiredDate();
-	*/
+	@Autowired
+	SalesRepository salesRepository;
+
+	public List<Sales> findAllExpiredDate() {
+
+		return null;
+	}
+
+	@Override
+	public List<Sales> getSales() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sales findSalesById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sales saveSales(Sales sale) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Sales setSales(Sales sale) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteSalesById(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
