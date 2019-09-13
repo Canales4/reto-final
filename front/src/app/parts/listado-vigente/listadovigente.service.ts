@@ -13,8 +13,12 @@ export class ListadovigenteService {
   getListado() {
     return this.http.get('http://localhost:3000/peliculas/');
   }
+   
+  /*getListadobyId(id) {
+    return this.http.get('http://localhost:3000/peliculas/' + id);
+  }
 
-  /*addOffer(obj) {
+  addOffer(obj) {
     return this.http.post(this.url, obj);
   }
 

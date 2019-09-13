@@ -9,14 +9,18 @@ import { SalesService } from '../sales.service';
 })
 export class SalesListComponent implements OnInit {
 
-  // sales: Sale[];
+  sales;
 
   constructor(private router: Router, private salesService: SalesService) { }
 
   ngOnInit() {
-    // this.salesService.getSales().subscribe(
-    //   sales => this.sales = sales;
-    // );
+    this.salesService.getSales().subscribe(data => {
+      this.sales = data;
+    });    
   }
+
+  /*addSales() {
+    this.router.navigate(['/sales/add']);
+  }*/
 
 }
