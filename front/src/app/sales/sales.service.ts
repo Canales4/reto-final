@@ -9,6 +9,10 @@ export class SalesService {
   constructor(private http: HttpClient) { }
 
   getSales(){
-    return this.http.get('http://localhost:3000/peliculas');
+    return this.http.get('http://localhost:3000/peliculas/');
+  }
+
+  getSaleById(id){
+    return this.http.get('http://localhost:3000/peliculas/'+id);
   }
 }

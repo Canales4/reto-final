@@ -23,31 +23,26 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>id</th>
-            <th>nombre</th>
-            <th>director</th>
-            <th>clasificacion</th>
-            <th>Pets</th>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Descuento</th>
+            <th>Fecha de expiracion</th>
           </tr>
         </thead>
 
         <tbody>
-          <!-- <tr *ngFor="let owner of owners">
-            <td class="ownerFullName"><a routerLink="/owners/{{owner.id}}" routerLinkActive="active"
-                (click)="onSelect(owner)">{{owner.firstName}} {{owner.lastName}}</a></td>
-            <td>{{owner.address}}</td>
-            <td>{{owner.city}}</td>
-            <td>{{owner.telephone}}</td>
-            <td>
-              <tr *ngFor="let pet of owner.pets">
-                {{pet.name}}
-              </tr>
-            </td>
-          </tr> -->
+          <tr *ngFor="let sale of sales" (click)="modSale(sale)">
+            <td>{{sale.id}}</td>
+            <td>{{sale.title}}</td>
+            <td>{{sale.description}}</td>
+            <td>{{sale.discount}}</td>
+            <td>{{sale.expireDate}}</td>
+          </tr>
         </tbody>
       </table>
       <div>
-        <button class="btn btn-default" (click)="addOwner()">Add Owner</button>
+        <!-- <button class="btn btn-default" (click)="addOwner()">Add Owner</button> -->
       </div>
     </div>
   </div>

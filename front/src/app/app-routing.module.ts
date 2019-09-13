@@ -26,12 +26,14 @@ import {PageNotFoundComponent} from './parts/page-not-found/page-not-found.compo
 import {WelcomeComponent} from './parts/welcome/welcome.component';
 import { SalesListComponent } from './sales/sales-list/sales-list.component';
 import { SalesAddComponent } from './sales/sales-add/sales-add.component';
+import { SalesEditComponent } from './sales/sales-edit/sales-edit.component';
 
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: '', component: WelcomeComponent},
   {path: 'sales', component: SalesListComponent},
   {path: 'sales/add', component: SalesAddComponent},
+  {path: 'sales/edit/:id', component: SalesEditComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
