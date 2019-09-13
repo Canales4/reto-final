@@ -3,10 +3,14 @@ package org.springframework.samples.petclinic.service;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Sales;
 import org.springframework.samples.petclinic.repository.SalesRepository;
+import org.springframework.stereotype.Service;
 
-public class SalesService {
+@Service
+public class SalesService implements ISalesService {
+	@Autowired
 	private SalesRepository salesRepository;
 	// private JpaSalesRepositoryImpl salesRepository;
 
@@ -33,6 +37,6 @@ public class SalesService {
 	}
 
 	public List<Sales> findExpiredDate(Date date) {
-		return salesRepository.findByStartDateAfter(date);
+		return salesRepository.findByExpireDateAfter(date);
 	}
 }

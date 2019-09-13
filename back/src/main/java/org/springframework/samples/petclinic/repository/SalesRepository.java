@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SalesRepository extends JpaRepository<Sales, Integer> {
-	public List<Sales> findByStartDateAfter(Date date);
+	public List<Sales> findByExpireDateAfter(Date date);
 }

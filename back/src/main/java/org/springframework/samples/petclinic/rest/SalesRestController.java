@@ -3,15 +3,22 @@ package org.springframework.samples.petclinic.rest;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Sales;
 import org.springframework.samples.petclinic.service.ISalesService;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/api/sales")
 public class SalesRestController {
+	@Autowired
 	private ISalesService salesServ;
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -19,27 +26,27 @@ public class SalesRestController {
 		return salesServ.getSales();
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Sales getSalesById(int id) {
+	@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	public @ResponseBody Sales getSalesById(@PathVariable(name ="id") int id) {
 		return salesServ.findSalesById(id);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody void saveSales(Sales sales) {
+	public @ResponseBody void saveSales(@RequestBody @Valid Sales sales) {
 		salesServ.saveSales(sales);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public @ResponseBody void setSales(Sales sales) {
-		salesServ.setSales(sales);
+	public @ResponseBody Sales setSales(@RequestBody @Valid Sales sales) {
+		return salesServ.setSales(sales);
 	}
 
-	@RequestMapping(method = RequestMethod.DELETE)
-	public @ResponseBody void deleteSales(int id) {
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
+	public @ResponseBody void deleteSales(@PathVariable(name ="id") int id) {
 		salesServ.deleteSalesById(id);
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/notexpired", method = RequestMethod.GET)
 	public @ResponseBody List<Sales> findExpiredDate(Date date) {
 		return salesServ.findExpiredDate(date);
 	}
