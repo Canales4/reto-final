@@ -7,14 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "sales")
 public class Sales extends BaseEntity {
-
-	@Column(name = "id")
-	@NotEmpty
-	protected int id;
 
 	@Column(name = "title")
 	protected String title;
@@ -25,16 +22,8 @@ public class Sales extends BaseEntity {
 	@Column(name = "discount")
 	protected Double discount;
 
-	@Column(name = "expireDate")
+	@Column(name = "expireDate")@DateTimeFormat(pattern = "yyyy/MM/dd")
 	protected Date expireDate;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getTitle() {
 		return title;

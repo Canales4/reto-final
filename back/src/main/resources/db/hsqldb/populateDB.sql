@@ -5,6 +5,11 @@ INSERT INTO vets VALUES (4, 'Rafael', 'Ortega');
 INSERT INTO vets VALUES (5, 'Henry', 'Stevens');
 INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins');
 
+
+INSERT INTO sales VALUES (1, 'Sharon', '2020',15, '2020-09-15' );
+INSERT INTO sales VALUES (2, 'Sharon', 'descripcion',20,'2019-09-10');
+INSERT INTO sales VALUES (3, 'Sharon', 'cmpleaños',12,'2019-09-17');
+
 INSERT INTO specialties VALUES (1, 'radiology');
 INSERT INTO specialties VALUES (2, 'surgery');
 INSERT INTO specialties VALUES (3, 'dentistry');
