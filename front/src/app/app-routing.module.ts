@@ -24,10 +24,14 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './parts/page-not-found/page-not-found.component';
 import {WelcomeComponent} from './parts/welcome/welcome.component';
+import { SalesListComponent } from './sales/sales-list/sales-list.component';
+import { SalesAddComponent } from './sales/sales-add/sales-add.component';
 
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: '', component: WelcomeComponent},
+  {path: 'sales', component: SalesListComponent},
+  {path: 'sales/add', component: SalesAddComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
