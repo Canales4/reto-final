@@ -25,6 +25,10 @@ public class SalesService {
 		return salesRepository.save(sale);
 	}
 	
+	public Sales setSales(Sales sale) {
+		return salesRepository.save(sale);
+	}
+	
 	public void deleteSalesById(int id) {
 		salesRepository.delete(id);
 	}
