@@ -1,5 +1,6 @@
 package org.springframework.samples.petclinic.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.samples.petclinic.model.Sales;
@@ -17,4 +18,6 @@ public interface ISalesService {
 	public Sales setSales(Sales sale);
 
 	public void deleteSalesById(int id);
+
+	public List<Sales> findExpiredDate(Date date);
 }

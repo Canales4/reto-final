@@ -1,5 +1,6 @@
 package org.springframework.samples.petclinic.rest;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.samples.petclinic.model.Sales;
@@ -36,6 +37,11 @@ public class SalesRestController {
 	@RequestMapping(method = RequestMethod.DELETE)
 	public @ResponseBody void deleteSales(int id) {
 		salesServ.deleteSalesById(id);
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody List<Sales> findExpiredDate(Date date) {
+		return salesServ.findExpiredDate(date);
 	}
 
 }
