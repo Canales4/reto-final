@@ -28,6 +28,11 @@ public class SalesRestController {
 		salesServ.saveSales(sales);
 	}
 
+	@RequestMapping(method = RequestMethod.PUT)
+	public @ResponseBody void setSales(Sales sales) {
+		// salesServ.setSales(sales);
+	}
+
 	@RequestMapping(method = RequestMethod.DELETE)
 	public @ResponseBody void deleteSales(int id) {
 		salesServ.deleteSalesById(id);
