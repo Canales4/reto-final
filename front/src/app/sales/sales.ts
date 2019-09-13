@@ -1,4 +1,4 @@
-export interface Sale {
+export interface Sales {
     id: number;
     title: string;
     description: string;

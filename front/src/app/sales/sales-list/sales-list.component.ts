@@ -11,8 +11,6 @@ export class SalesListComponent implements OnInit {
   // Variables
   sales;
 
-  sales;
-
   constructor(private router: Router, private salesService: SalesService) { }
 
   ngOnInit() {
@@ -25,8 +23,8 @@ export class SalesListComponent implements OnInit {
     this.router.navigate(['/sales/edit/'+obj.id]);
   }
 
-  /*addSales() {
+  addSales() {
     this.router.navigate(['/sales/add']);
-  }*/
+  }
 
 }

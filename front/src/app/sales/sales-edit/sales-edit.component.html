@@ -1,3 +1,57 @@
-<p>
-  sales-edit works!
-</p>
+<div class="container-fluid">
+    <div class="container xd-container">
+      <h2>
+        Edit sale
+      </h2>
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+      <form (ngSubmit)="onSubmit(salesForm.value)" #saleForm="ngForm" class="form-horizontal">
+        <div class="form-group" hidden="true">
+          <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="sales.id" name="id"/>
+        </div>
+        <div class="form-group has-feedback" [class.has-success]="title.valid" [class.has-error]="!title.valid">
+          <label for="title" class="col-sm-2 control-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" [(ngModel)]="sale.title" minlength="2" required name="title" #title="ngModel"/>
+            <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="title.valid" [class.glyphicon-remove]="!title.valid" aria-hidden="true"></span>
+            <span class="help-block" *ngIf="title.dirty && title.hasError('required')">Title name is required</span>
+            <span class="help-block" *ngIf="title.dirty && title.hasError('minlength')">Title name must be at least 2 characters long</span>
+          </div>
+        </div>
+        <div class="form-group has-feedback" [class.has-success]="description.valid" [class.has-error]="!description.valid">
+          <label for="description" class="col-sm-2 control-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="description" [(ngModel)]="sale.description" name="description" minlength="2" required #description="ngModel"/>
+            <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="description.valid" [class.glyphicon-remove]="!description.valid" aria-hidden="true"></span>
+            <span class="help-block" *ngIf="description.dirty && description.hasError('required')">description is required</span>
+            <span class="help-block" *ngIf="description.dirty && description.hasError('minlength')">description must be at least 2 characters long</span>
+          </div>
+        </div>
+        <div class="form-group has-feedback" [class.has-success]="discount.valid" [class.has-error]="!discount.valid">
+          <label for="discount" class="col-sm-2 control-label">discount</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="discount" [(ngModel)]="sale.discount" name="discount" required #discount="ngModel"/>
+            <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="discount.valid" [class.glyphicon-remove]="!discount.valid" aria-hidden="true"></span>
+            <span class="help-block" *ngIf="discount.dirty && discount.hasError('required')">discount is required</span>
+          </div>
+        </div>
+        <div class="form-group has-feedback" [class.has-success]="city.valid" [class.has-error]="!city.valid">
+          <label for="city" class="col-sm-2 control-label">ExpireDate</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="city" [(ngModel)]="sale.city" name="espiredate" required #city="ngModel"/>
+            <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="city.valid" [class.glyphicon-remove]="!city.valid" aria-hidden="true"></span>
+            <span class="help-block" *ngIf="city.dirty && city.hasError('required')">expiredate is required</span>
+          </div>
+        </div>        
+  
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-default" (click)="gotosaleList()">Back</button>
+            <button type="submit" [disabled]="!saleForm.valid" class="btn btn-default">Update sale</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

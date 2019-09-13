@@ -10,10 +10,10 @@ import { Sales } from '../sales' ;
 })
 export class SalesAddComponent implements OnInit {
 
-  sale: Sales;
+  sale;
   errorMessage: string;
 
-  constructor(private saleService: SalesService, private router: Router) {
+  constructor(private salesService: SalesService, private router: Router) {
     this.sale = <Sales>{};
   }
 
@@ -21,22 +21,18 @@ export class SalesAddComponent implements OnInit {
   }
 
   onSubmit(sales: Sales) {
-    sales.id;
-    this.saleService.addSales(sales).subscribe(
-      new_owner => {
-        this.sale = new_owner;
-        this.gotoOwnersList();  
+    sales.id  = null;
+    this.salesService.addSale(sales).subscribe(
+      new_sale => {
+        this.sale = new_sale;   
+        this.gotoSalesList();
       },
       error => this.errorMessage = <any>error
     );
   }
 
   gotoSalesList() {
+    console.log("Usuario Añadido");
     this.router.navigate(['/sales']);
   }
-
-  addSales() {
-    this.router.navigate(['/sales/add']);
-  }
-
 }

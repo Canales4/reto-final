@@ -5,12 +5,12 @@
     </h2>
     <form (ngSubmit)="onSubmit(salesForm.value)" #salesForm="ngForm" class="form-horizontal">
       <div class="form-group" hidden="true">
-        <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="sales.id" name="id"/>
+        <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="sale.id" name="id"/>
       </div>
       <div class="form-group has-feedback" [class.has-success]="title.dirty && title.valid" [class.has-error]="title.dirty &&  !title.valid">
         <label for="title" class="col-sm-2 control-label">Title</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="title" [(ngModel)]="sales.title" minlength="2" required name="title" #title="ngModel"/>
+          <input type="text" class="form-control" id="title" [(ngModel)]="sale.title" minlength="2" required name="title" #title="ngModel"/>
           <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="title.valid" [class.glyphicon-remove]="!title.valid" aria-hidden="true"></span>
           <span class="help-block" *ngIf="title.dirty && title.hasError('required')">title is required</span>
           <span class="help-block" *ngIf="title.dirty && title.hasError('minlength')">title must be at least 2 characters long</span>
@@ -19,7 +19,7 @@
       <div class="form-group has-feedback" [class.has-success]="description.dirty && description.valid" [class.has-error]="description.dirty && !description.valid">
         <label for="description" class="col-sm-2 control-label">Description</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="description" [(ngModel)]="sales.description" name="description" minlength="2" required #description="ngModel"/>
+          <input type="text" class="form-control" id="description" [(ngModel)]="sale.description" name="description" minlength="2" required #description="ngModel"/>
           <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="description.valid" [class.glyphicon-remove]="!description.valid" aria-hidden="true"></span>
           <span class="help-block" *ngIf="description.dirty && description.hasError('required')">Description is required</span>
           <span class="help-block" *ngIf="description.dirty && description.hasError('minlength')">Description must be at least 2 characters long</span>
@@ -28,7 +28,7 @@
       <div class="form-group has-feedback" [class.has-success]="discount.dirty && discount.valid" [class.has-error]="discount.dirty && !discount.valid">
         <label for="discount" class="col-sm-2 control-label">Discount</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="discount" [(ngModel)]="sales.discount" name="discount" required #discount="ngModel"/>
+          <input type="text" class="form-control" id="discount" [(ngModel)]="sale.discount" name="discount" required #discount="ngModel"/>
           <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="discount.valid" [class.glyphicon-remove]="!discount.valid" aria-hidden="true"></span>
           <span class="help-block" *ngIf="discount.dirty && discount.hasError('required')">Discount is required</span>
         </div>
@@ -36,7 +36,7 @@
       <div class="form-group has-feedback" [class.has-success]="expiredate.dirty && expiredate.valid" [class.has-error]="expiredate.dirty && !expiredate.valid">
         <label for="expiredate" class="col-sm-2 control-label">Expire Date</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="expiredate" [(ngModel)]="sales.expiredate" name="expiredate" required #expiredate="ngModel"/>
+          <input type="text" class="form-control" id="expiredate" [(ngModel)]="sale.expiredate" name="expiredate" required #expiredate="ngModel"/>
           <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="expiredate.valid" [class.glyphicon-remove]="!expiredate.valid" aria-hidden="true"></span>
           <span class="help-block" *ngIf="expiredate.dirty && expiredate.hasError('required')">expiredate is required</span>
         </div>

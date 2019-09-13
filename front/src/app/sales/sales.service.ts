@@ -16,6 +16,10 @@ export class SalesService {
     return this.http.get('http://localhost:3000/peliculas/'+id);
   }
 
+  addSale(obj) {
+    return this.http.post('http://localhost:3000/peliculas/', obj);
+  }
+
   /*modifyOffer(obj, id) {
     return this.http.put(this.url, obj, id);
   }

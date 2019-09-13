@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Sales } from '../sales' ;
+import { SalesService } from '../sales.service'
 
 @Component({
   selector: 'app-sales-edit',
@@ -7,9 +10,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SalesEditComponent implements OnInit {
   // @Input() mensaje;
-  constructor() { }
+  constructor(private salesService: SalesService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  gotosaleList() {
+    console.log("Usuario Añadido");
+    this.router.navigate(['/sales']);
   }
 
 }
