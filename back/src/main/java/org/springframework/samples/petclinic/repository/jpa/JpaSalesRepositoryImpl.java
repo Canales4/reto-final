@@ -16,8 +16,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Profile("jpa")
 public class JpaSalesRepositoryImpl {
-	@PersistenceContext
-    private EntityManager em;
+
 	/*
 	@Query(
 	  value = "SELECT s FROM sales s WHERE s.expireDate > CURRENT_TIMESTAMP", 
