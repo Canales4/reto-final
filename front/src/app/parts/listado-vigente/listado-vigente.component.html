@@ -1,0 +1,17 @@
+<div>
+  <table style="text-align:center; border: 1px solid black;">
+    <th>Id</th>
+    <th>userId</th>
+    <th>Title</th>
+    <th>Body</th>
+
+    <tr *ngFor="let item of listado">
+      <ng-container>
+        <td style="text-align:center; border: 1px solid black;">{{item.id}}</td>
+        <td style="text-align:center; border: 1px solid black;">{{item.nombre}}</td>
+        <td style="text-align:center; border: 1px solid black;">{{item.director}}</td>
+        <td style="text-align:center; border: 1px solid black;">{{item.clasificacion}}</td>
+      </ng-container>
+    </tr>
+  </table>
+</div>

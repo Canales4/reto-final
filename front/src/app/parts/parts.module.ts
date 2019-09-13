@@ -25,15 +25,17 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {WelcomeComponent} from './welcome/welcome.component';
+import {ListadoVigenteComponent} from './listado-vigente/listado-vigente.component'
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule, 
     FormsModule
   ],
   declarations: [
     PageNotFoundComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ListadoVigenteComponent
   ],
   exports: [
     PageNotFoundComponent,
