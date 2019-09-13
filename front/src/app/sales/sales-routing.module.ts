@@ -22,24 +22,24 @@
 
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {OwnerDetailComponent} from './owner-detail/owner-detail.component';
-import {OwnerListComponent} from './owner-list/owner-list.component';
-import {OwnerEditComponent} from './owner-edit/owner-edit.component';
-import {OwnerAddComponent} from './owner-add/owner-add.component';
-import {PetAddComponent} from '../pets/pet-add/pet-add.component';
+// import {SalesDetailComponent} from './sales-detail/sales-detail.component';
+import {SalesListComponent} from './sales-list/sales-list.component';
+// import {SalesEditComponent} from './sales-edit/sales-edit.component';
+import {SalesAddComponent} from './sales-add/sales-add.component';
+// import {PetAddComponent} from '../pets/pet-add/pet-add.component';
 
-const salesRoutes: Routes = [
-  {path: 'owners', component: OwnerListComponent},
-  {path: 'owners/add', component: OwnerAddComponent},
-  {path: 'owners/:id', component: OwnerDetailComponent},
-  {path: 'owners/:id/edit', component: OwnerEditComponent},
-  {path: 'owners/:id/pets/add', component: PetAddComponent}
+const ownerRoutes: Routes = [
+  {path: 'sales', component: SalesListComponent},
+  {path: 'sales/add', component: SalesAddComponent},
+  // {path: 'sales/:id', component: SalesDetailComponent},
+  // {path: 'sales/:id/edit', component: SalesEditComponent},
+  // {path: 'sales/:id/pets/add', component: PetAddComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(salesRoutes)],
+  imports: [RouterModule.forChild(ownerRoutes)],
   exports: [RouterModule]
 })
 
-export class OwnersRoutingModule {
+export class SalesRoutingModule {
 }
