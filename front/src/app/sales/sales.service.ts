@@ -10,14 +10,10 @@ export class SalesService {
 
   getSales(){
     return this.http.get('http://localhost:3000/peliculas/');
-  }  
+  }
 
-  /*getListadobyId(id) {
-    return this.http.get('http://localhost:3000/peliculas/' + id);
-  }*/
-
-  addSales(obj) {
-    return this.http.post('http://localhost:3000/peliculas/', obj);
+  getSaleById(id){
+    return this.http.get('http://localhost:3000/peliculas/'+id);
   }
 
   /*modifyOffer(obj, id) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sales-edit',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sales-edit.component.css']
 })
 export class SalesEditComponent implements OnInit {
-
+  // @Input() mensaje;
   constructor() { }
 
   ngOnInit() {

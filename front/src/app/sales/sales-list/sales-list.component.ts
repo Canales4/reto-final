@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { SalesService } from '../sales.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sales-list',
@@ -8,6 +8,8 @@ import { SalesService } from '../sales.service';
   styleUrls: ['./sales-list.component.css']
 })
 export class SalesListComponent implements OnInit {
+  // Variables
+  sales;
 
   sales;
 
@@ -16,7 +18,11 @@ export class SalesListComponent implements OnInit {
   ngOnInit() {
     this.salesService.getSales().subscribe(data => {
       this.sales = data;
-    });    
+    });
+  }
+
+  modSale(obj){
+    this.router.navigate(['/sales/edit/'+obj.id]);
   }
 
   /*addSales() {
