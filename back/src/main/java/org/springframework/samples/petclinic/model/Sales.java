@@ -4,11 +4,19 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+<<<<<<< HEAD
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "sales")
+=======
+import javax.persistence.UniqueConstraint;
+
+import org.hibernate.validator.constraints.NotEmpty;
+@Entity
+@Table(name = "sales", uniqueConstraints = @UniqueConstraint(columnNames = {"id","title","description", "discount","expireDate"}))
+>>>>>>> 2d61ad94d6cec5cc7260db29735ebc3accfdcc03
 public class Sales extends BaseEntity {
 
 	@Column(name = "id")
