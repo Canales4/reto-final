@@ -3,7 +3,7 @@ package org.springframework.samples.petclinic.rest;
 import java.util.List;
 
 import org.springframework.samples.petclinic.model.Sales;
-import org.springframework.samples.petclinic.service.SalesService;
+import org.springframework.samples.petclinic.service.ISalesService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SalesRestController {
-	private SalesService salesServ;
+	private ISalesService salesServ;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody List<Sales> getAll() {
@@ -30,7 +30,7 @@ public class SalesRestController {
 
 	@RequestMapping(method = RequestMethod.PUT)
 	public @ResponseBody void setSales(Sales sales) {
-		// salesServ.setSales(sales);
+		salesServ.setSales(sales);
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE)
