@@ -13,8 +13,10 @@ public interface ISalesService {
 
 	public Sales findSalesById(int id);
 
+	/** metodo POST */
 	public Sales saveSales(Sales sale);
 
+	/** metodo PUT */
 	public Sales setSales(Sales sale);
 
 	public void deleteSalesById(int id);

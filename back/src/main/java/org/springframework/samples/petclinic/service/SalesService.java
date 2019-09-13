@@ -18,10 +18,12 @@ public class SalesService {
 		return salesRepository.findOne(id);
 	}
 
+	/** metodo POST */
 	public Sales saveSales(Sales sale) {
 		return salesRepository.save(sale);
 	}
 
+	/** metodo PUT */
 	public Sales setSales(Sales sale) {
 		return salesRepository.save(sale);
 	}
