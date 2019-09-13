@@ -7,6 +7,7 @@ import org.springframework.samples.petclinic.repository.SalesRepository;
 
 public class SalesService {
 	private SalesRepository salesRepository;
+	//private JpaSalesRepositoryImpl salesRepository;
 
 	public List<Sales> getSales() {
 		return salesRepository.findAll();
